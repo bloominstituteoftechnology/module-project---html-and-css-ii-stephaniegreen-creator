@@ -3,11 +3,163 @@
 
 <head>
   <meta charset="UTF-8">
-  <style>
-    /* 👉 Task 1- Apply the reset found on this page: https://www.joshwcomeau.com/css/custom-css-reset/ */
 
-  </style>
   <style>
+    /* https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+    /*
+  1. Use a more-intuitive box-sizing model.
+*/
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    /*
+    2. Remove default margin
+  */
+    * {
+      margin: 0;
+    }
+
+    /*
+    3. Allow percentage-based heights in the application
+  */
+    html,
+    body {
+      height: 100%;
+    }
+
+    /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+    body {
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /*
+    6. Improve media defaults
+  */
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    /*
+    7. Remove built-in form typography styles
+  */
+    input,
+    button,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    /*
+    8. Avoid text overflows
+  */
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      overflow-wrap: break-word;
+    }
+
+    /*
+    9. Create a root stacking context
+  */
+    #root,
+    #__next {
+      isolation: isolate;
+    }
+  </style>
+
+  <style>
+    body {
+      font-family: Arial;
+    }
+
+    #headerTop {
+      color: white;
+      padding: 0.8rem;
+      background-color: darkcyan;
+    }
+
+    .hTop {
+      display: inline-block;
+    }
+
+    #headerTop span {
+      margin: 0.5em;
+    }
+
+    .marg {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    #headerBottom {
+      border-bottom: 1px solid gray;
+      padding: 0.5rem;
+    }
+
+    .hBom {
+      display: inline-block;
+    }
+
+    #only {
+      color: pink;
+      background-color: blueviolet;
+      font-weight: bold;
+      border-radius: 4px;
+      padding: 0.4rem;
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+
+    #headerBottom button {
+      padding: 0;
+      border: none;
+      background: none;
+    }
+
+    #headerBottom button.active {
+      font-weight: bolder;
+      border-bottom: 2px solid gold;
+    }
+
+    .email > div {
+      display: inline-block;
+    }
+    .email {
+      padding:0.4rem ;
+      padding-left: 1rem;
+      border-bottom: 1px solid green ;
+    }
+
+    .email-name, .email-subject {
+      width: 35%;
+    }
+
+    .email-check, .email-date {
+      width: 8%;
+    }
+
+    .email:nth-child(2) {
+      font-weight: bold;
+    }
+
     /* 👉 Task 2- Target the body element.
     Apply a font family of Arial to the body element.
     The font property is inherited by descendant (nested) elements. */
@@ -61,34 +213,35 @@
     This will make it look "unread". */
 
     /* Well done! Check the design file to make sure you are close enough. */
-
   </style>
   <title>Document</title>
+
+
 </head>
 
 <body>
   <div id="instructions">
-    <h1>HTML & CSS II</h1>
+    <!-- <h1>HTML & CSS II</h1>
     <p>Please load this file in VSCode and Chrome, and open the Elements tab, Sources sub-tab, in Chrome Dev Tools.</p>
     <p>Work through the challenges found inside both style tags in this document.</p>
     <p>You will find a screenshot of the end result inside the design folder.</p>
-    <p>You can now comment out the h1 and the p tags...</p>
+    <p>You can now comment out the h1 and the p tags...</p> -->
   </div>
   <div>
     <header>
       <div id="headerTop">
-        <div>
-          <span>Super Mail</span>
+        <div class="hTop">
+          <span class="marg">Super Mail</span>
           <span>Jess</span>
         </div>
-        <div>
+        <div class="hTop">
           <input type="text" placeholder="Search Mail" />
         </div>
       </div>
       <div id="headerBottom">
-        <div>Compose</div>
-        <div>
-          <button>All mail</button>
+        <div class="hBom" id="only">Compose</div>
+        <div class="hBom">
+          <button class="active">All mail</button>
           <button>Unread</button>
           <button>Pinned</button>
           <button>VIPs</button>
